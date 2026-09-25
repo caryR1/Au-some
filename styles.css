@@ -50,3 +50,13 @@
   #services{grid-column:3;grid-row:2/-1;margin-top:18px}
   .script{font-size:clamp(68px,6vw,86px)}h1{font-size:clamp(38px,3.4vw,49px)}h1 span{font-size:clamp(21px,1.95vw,28px)}
 }
+
+/* Form result pop-up (success / failure). */
+#result-dialog{width:min(440px,calc(100% - 32px));text-align:center;padding:34px 30px 28px}
+.result-icon{width:68px;height:68px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;font:700 36px/1 Georgia,serif;color:#fff}
+#result-dialog.ok .result-icon{background:#1f7a4d}#result-dialog.ok .result-icon:before{content:"\2713"}
+#result-dialog.err .result-icon{background:#a8321f}#result-dialog.err .result-icon:before{content:"!"}
+#result-dialog h2{font:32px/1.2 Georgia,serif;margin:0 0 10px}
+#result-dialog p{color:#4c5c67;font-size:15px;margin:0 0 24px}
+#result-close{width:100%}
+.form-submit:disabled{opacity:.7;cursor:wait}
