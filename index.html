@@ -6,7 +6,17 @@
   <meta name="description" content="Florida notary services, Jamaican passport renewals and Jamaican driver's license renewals. Contact Melicia for appointments in Bay County and surrounding areas.">
   <meta name="theme-color" content="#061d2e">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23061d2e'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Georgia' font-size='46' fill='%23e9c778'%3EA%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260925-0153"><script src="app.js?v=20260925-0153" defer></script>
+  <style>
+    .heritage-flags{display:flex;align-items:center;gap:16px;padding:14px 30px;position:relative;border:1.5px solid rgba(217,184,95,.9);border-radius:50%;background:radial-gradient(ellipse at center,rgba(217,184,95,.08),rgba(6,29,46,.48) 68%);box-shadow:0 -8px 18px -13px #f4dc94,0 8px 18px -13px #f4dc94,inset 0 0 16px rgba(217,184,95,.08)}
+    .heritage-flags:before,.heritage-flags:after{content:"";position:absolute;top:50%;width:17px;height:9px;border-top:1.5px solid #d9b85f;border-bottom:1.5px solid #d9b85f;transform:translateY(-50%)}
+    .heritage-flags:before{right:100%;border-radius:70% 0 0 70%}
+    .heritage-flags:after{left:100%;border-radius:0 70% 70% 0}
+    .heritage-flags svg{display:block;width:94px;height:50px;border-radius:3px;filter:saturate(.72) brightness(.88)}
+    .service-number svg{width:34px;height:34px;display:block}
+    @media(min-width:761px){.heritage-flags{position:absolute;top:92px;right:300px;z-index:5}}
+    @media(max-width:760px){.heritage-flags{width:max-content;margin:12px auto}}
+  </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -16,13 +26,14 @@
   <div class="hero-inner">
     <div class="portrait"><img src="assets/melicia.png" alt="Melicia smiling, wearing a black blazer and gold jewelry" width="1122" height="1402" fetchpriority="high"><div class="portrait-caption"><span>YOUR PERSONAL POINT OF CONTACT</span><strong>Meet Melicia</strong><p>Professional. Reliable. Convenient.</p></div></div>
     <div class="hero-content">
-      <div class="brand-row"><div class="wordmark"><span class="crown" aria-hidden="true">♛</span><span class="script">Au-Some</span><h1 id="brand-title">NOTARIFIC <span>SERVICES LLC</span></h1></div><div class="seal" aria-label="Florida Commissioned Notary"><span>FLORIDA</span><strong>COMMISSIONED<br>NOTARY</strong><span class="seal-star" aria-hidden="true">♥</span></div></div>
+      <div class="brand-row"><div class="wordmark"><span class="crown" aria-hidden="true">&#9819;</span><span class="script">Au-Some</span><h1 id="brand-title">NOTARIFIC <span>SERVICES LLC</span></h1></div><div class="seal" aria-label="Florida Commissioned Notary"><span>FLORIDA</span><strong>COMMISSIONED<br>NOTARY</strong><span class="seal-star" aria-hidden="true">&#9733;</span></div></div>
+      <div class="heritage-flags" aria-label="United States and Jamaica"><svg viewBox="0 0 190 100" role="img" aria-label="United States flag"><rect width="190" height="100" fill="#fff"/><path stroke="#b22234" stroke-width="15.4" d="M0 7.7h190M0 38.5h190M0 69.3h190M0 100h190"/><rect width="76" height="54" fill="#3c3b6e"/><g fill="#fff"><circle cx="12" cy="11" r="3"/><circle cx="30" cy="11" r="3"/><circle cx="48" cy="11" r="3"/><circle cx="66" cy="11" r="3"/><circle cx="21" cy="27" r="3"/><circle cx="39" cy="27" r="3"/><circle cx="57" cy="27" r="3"/><circle cx="12" cy="43" r="3"/><circle cx="30" cy="43" r="3"/><circle cx="48" cy="43" r="3"/><circle cx="66" cy="43" r="3"/></g></svg><svg viewBox="0 0 190 100" role="img" aria-label="Jamaica flag"><rect width="190" height="100" fill="#009b3a"/><path fill="#000" d="M0 0l95 50L0 100zm190 0L95 50l95 50z"/><path fill="none" stroke="#fed100" stroke-width="15" d="M-5-5l200 110M195-5L-5 105"/></svg></div>
       <p class="tagline">Professional, Reliable, Convenient Service</p>
       <section id="services" aria-labelledby="services-title"><h2 class="ribbon" id="services-title">Services provided include</h2>
         <div class="service-list">
-          <button class="service" data-contact data-service="Florida Notary Services"><span class="service-number" aria-hidden="true">✒</span><span class="service-label"><strong>Florida<br>Notary Services</strong></span><img class="service-art" src="assets/notary.png" alt="" width="160" height="160"></button>
+          <button class="service" data-contact data-service="Florida Notary Services"><span class="service-number" aria-hidden="true">&#10002;</span><span class="service-label"><strong>Florida<br>Notary Services</strong></span><img class="service-art" src="assets/notary.png" alt="" width="160" height="160"></button>
           <button class="service" data-contact data-service="Jamaican Passport Renewals"><span class="service-number green" aria-hidden="true">🇯🇲</span><span class="service-label"><strong>Jamaican<br>Passport Renewals</strong></span><img class="service-art" src="assets/passport.png" alt="" width="160" height="160"></button>
-          <button class="service" data-contact data-service="Jamaican Driver’s Licence Renewals"><span class="service-number" aria-hidden="true">▤</span><span class="service-label"><strong>Jamaican Driver’s<br>Licence Renewals</strong></span><img class="service-art" src="assets/license.png" alt="" width="160" height="160"></button>
+          <button class="service" data-contact data-service="Jamaican Driver’s License Renewals"><span class="service-number" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="25" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="32" cy="32" r="7" fill="currentColor"/><path d="M10 27h44M32 32L18 52M32 32l14 20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg></span><span class="service-label"><strong>Jamaican Driver’s<br>License Renewals</strong></span><img class="service-art" src="assets/license.png" alt="" width="160" height="160"></button>
         </div>
       </section>
       <div class="hero-action"><button class="button" data-contact>Contact Melicia <span aria-hidden="true">↗</span></button><span>By appointment</span></div>
@@ -30,34 +41,28 @@
   </div>
 </section>
 <div class="coastal-panorama" aria-hidden="true"></div>
-<section class="details" aria-labelledby="details-title">
-  <p class="eyebrow">HOW WE CAN HELP</p><h2 id="details-title">Personal service for important documents</h2><p class="details-intro">Clear, appointment-based assistance for Florida notary needs and select Jamaican document renewals in Bay County and surrounding areas.</p>
-  <div class="detail-grid">
-    <article><h3>Florida Notary Services</h3><p>Professional notarization support for eligible documents. Contact Melicia with the type of document you need notarized so she can help you prepare for your appointment.</p></article>
-    <article><h3>Jamaican Passport Renewals</h3><p>Assistance with the Jamaican passport renewal process, including helping you understand what to bring and what information is needed for your appointment.</p></article>
-    <article><h3>Jamaican Driver’s Licence Renewals</h3><p>Appointment-based assistance for Jamaican driver’s licence renewal needs, with personal guidance through the information and documentation required.</p></article>
-  </div>
-  <div class="appointment-note"><strong>Serving Bay County &amp; surrounding areas</strong><span>Services are available by appointment.</span><button class="button" data-contact>Contact Melicia <span aria-hidden="true">↗</span></button></div>
-</section>
-<section class="contact" id="contact" aria-labelledby="contact-title">
+<section class="content-section">
+<p class="eyebrow">PERSONAL, PROFESSIONAL SUPPORT</p><h2>Important paperwork deserves careful attention.</h2><p>Au-Some Notarific Services LLC provides friendly, dependable assistance for clients in Bay County and surrounding areas, connecting the needs of Florida and Jamaican communities.</p>
+<div class="info-grid"><article><h3>Florida Notary Services</h3><p>Professional notarization for eligible personal and business documents requiring a commissioned Florida notary.</p></article><article><h3>Jamaican Passport Renewals</h3><p>Practical assistance preparing renewal paperwork and organizing documents for submission to the appropriate Jamaican authority.</p></article><article><h3>Jamaican Driver’s Licence Renewals</h3><p>Document support to help organize Jamaican driver’s licence renewal requirements for the applicable issuing authority.</p></article></div></section>
+<section class="why-section"><div><p class="eyebrow">WHY CHOOSE AU-SOME?</p><h2>Clear help. Personal attention. Convenient service.</h2><p>Work directly with Melicia. Every request is handled with care, discretion and attention to detail.</p></div><div class="why-list"><p><strong>Professional &amp; Confidential</strong><br>Your documents and personal information are handled respectfully.</p><p><strong>By Appointment</strong><br>Serving Bay County and surrounding areas with convenient, scheduled appointments.</p><p><strong>Jamaica • Florida • and Beyond</strong><br>Support for clients managing important documents across communities.</p></div></section><section class="contact" id="contact" aria-labelledby="contact-title">
   <h2 id="contact-title">Trusted Support Starts Here</h2>
-  <div class="contact-links"><a href="tel:+14452459160"><span class="contact-symbol" aria-hidden="true">☎</span><span><small>CALL MELICIA</small>445-245-9160</span></a><a href="mailto:ausomenotarific@gmail.com"><span class="contact-symbol" aria-hidden="true">✉</span><span><small>EMAIL MELICIA</small>ausomenotarific@gmail.com</span></a></div>
+  <div class="contact-links"><a href="tel:+14452459160"><span class="contact-symbol" aria-hidden="true">☎</span><span><small>CALL MELICIA</small>445-245-9160</span></a><a href="mailto:au-somenotarific@gmail.com"><span class="contact-symbol" aria-hidden="true">✉</span><span><small>EMAIL MELICIA</small>au-somenotarific@gmail.com</span></a></div>
   <button class="button" data-contact>Contact Melicia <span aria-hidden="true">↗</span></button>
   <div class="availability"><span>Bay County &amp; surrounding areas</span><span>By appointment</span></div>
 </section>
 </main>
 <footer><a class="footer-brand" href="#home">Au-Some Notarific Services LLC</a><p>We are not attorneys and do not provide legal advice or legal representation.</p><small>© <span id="year">2026</span> Au-Some Notarific Services LLC</small></footer>
 <dialog id="contact-dialog" aria-labelledby="form-title"><div class="dialog-head"><div><p class="eyebrow">LET’S GET IN TOUCH</p><h2 id="form-title">Contact Melicia</h2></div><button type="button" class="close" aria-label="Close contact form">×</button></div><p class="form-intro">Share a few details so Melicia can help with your request.</p>
-<form id="contact-form"><div class="form-grid">
+<form id="contact-form" action="send.php" method="post"><div class="form-grid">
 <label>Full name <span aria-hidden="true">*</span><input name="fullName" autocomplete="name" required maxlength="120"></label>
 <label>Phone <span aria-hidden="true">*</span><input name="phone" type="tel" autocomplete="tel" required maxlength="40"></label>
 <label>Email <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" required maxlength="254"></label>
 <label>Preferred contact method <span aria-hidden="true">*</span><select name="contactMethod" required><option value="">Please select</option><option>Phone</option><option>Email</option></select></label>
 <label>Best contact time <span aria-hidden="true">*</span><input name="contactTime" placeholder="e.g. Weekdays after 3 pm, Central" required maxlength="160"></label>
-<label>Service needed <span aria-hidden="true">*</span><select name="service" required><option value="">Please select</option><option>Florida Notary Services</option><option>Jamaican Passport Renewals</option><option>Jamaican Driver’s Licence Renewals</option></select></label>
+<label>Service needed <span aria-hidden="true">*</span><select name="service" required><option value="">Please select</option><option>Florida Notary Services</option><option>Jamaican Passport Renewals</option><option>Jamaican Driver’s License Renewals</option></select></label>
 <label class="wide">Preferred appointment / availability window <span aria-hidden="true">*</span><input name="availability" placeholder="e.g. Tuesday or Thursday afternoon" required maxlength="240"></label>
 <label class="wide">Notes <small>(optional)</small><textarea name="notes" rows="4" maxlength="2000" placeholder="How can Melicia help? Please do not include document numbers or sensitive personal information."></textarea></label>
-<label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label></div><p class="privacy">Your information is used only to respond to your request. Please do not include document numbers or sensitive personal information.</p><button class="button form-submit" type="submit">Submit Request <span aria-hidden="true">↗</span></button><p id="form-status" role="status" aria-live="polite"></p></form>
+</div><p class="privacy">Your information is used only to respond to your request and will be sent directly to Melicia.</p><button class="button form-submit" type="submit">Submit request <span aria-hidden="true">↗</span></button><p id="form-status" role="status"></p></form>
 </dialog>
-<noscript><div class="noscript">To request an appointment, call <a href="tel:+14452459160">445-245-9160</a> or email <a href="mailto:ausomenotarific@gmail.com">ausomenotarific@gmail.com</a>.</div></noscript>
+<noscript><div class="noscript">To request an appointment, call <a href="tel:+14452459160">445-245-9160</a> or email <a href="mailto:au-somenotarific@gmail.com">au-somenotarific@gmail.com</a>.</div></noscript>
 </body></html>
