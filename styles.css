@@ -13,3 +13,16 @@
 .service-number svg{width:34px;height:34px;display:block}
 .sr-only,h1 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+
+/* Mobile navigation */
+.menu-toggle{display:none;background:transparent;border:1px solid #d3ad5e88;border-radius:10px;width:44px;height:44px;padding:10px;cursor:pointer}
+.menu-toggle span{display:block;height:2px;background:var(--gold);margin:5px 0;border-radius:2px}
+@media(max-width:760px){
+ .header{position:relative;z-index:50}
+ .menu-toggle{display:block;margin-left:auto}
+ .header nav{display:none;position:absolute;top:calc(100% + 1px);left:5%;right:5%;padding:14px;background:#061d2ef7;border:1px solid #d3ad5e66;border-radius:14px;box-shadow:0 16px 35px #0008;flex-direction:column;align-items:stretch;gap:5px}
+ .header nav.open{display:flex}
+ .header nav>a,.header nav>a[href="blog/"]{display:block;padding:12px 14px;font-size:15px;color:#f7f3e8;border-radius:9px}
+ .header nav>a:hover{background:#ffffff0d;color:var(--gold)}
+ .header nav .button.compact{width:100%;margin-top:5px}
+}
