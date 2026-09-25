@@ -14,3 +14,9 @@
   .article-support{width:min(100%,460px);margin:24px auto}
   .article-support img{height:220px}
 }
+
+/* Article contrast: pages use the site's navy background */
+.article-shell h1{color:#fbf6e9}
+.article-shell h2{color:#edcc82}
+.article-shell p{color:#d6dcdf}
+.article-shell .eyebrow{color:#edcc82}
