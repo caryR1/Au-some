@@ -26,3 +26,8 @@
  .header nav>a:hover{background:#ffffff0d;color:var(--gold)}
  .header nav .button.compact{width:100%;margin-top:5px}
 }
+
+/* Prevent horizontal page drift on all screen sizes */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{position:relative}
+img,svg,video,canvas{max-width:100%}
