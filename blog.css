@@ -20,3 +20,7 @@
 .article-shell h2{color:#edcc82}
 .article-shell p{color:#d6dcdf}
 .article-shell .eyebrow{color:#edcc82}
+
+/* Refined article title scale */
+.article-shell h1{font-size:clamp(2rem,4vw,3.15rem);line-height:1.1;max-width:850px}
+@media(max-width:800px){.article-shell h1{font-size:clamp(1.85rem,8vw,2.5rem)}}
