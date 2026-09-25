@@ -60,3 +60,6 @@
 #result-dialog p{color:#4c5c67;font-size:15px;margin:0 0 24px}
 #result-close{width:100%}
 .form-submit:disabled{opacity:.7;cursor:wait}
+
+/* Resource previews + refined service icons */
+.service-number svg{width:42px;height:42px;display:block}.quill-icon svg{transform:rotate(-7deg);color:#15191b}.jamaica-icon{background:#eee4cf}.jamaica-icon svg{width:52px;height:52px}.latest-section{max-width:1180px;margin:auto;padding:70px 6%;border-top:1px solid #d3ad5e35}.latest-section>h2{font:42px/1.18 Georgia,serif;margin:0 0 32px}.latest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.latest-grid article{background:linear-gradient(145deg,#0b2a42,#061925);border:1px solid #d3ad5e55;border-radius:16px;padding:26px;box-shadow:0 12px 35px #0002}.latest-grid small{color:var(--gold);font-weight:700;letter-spacing:1.3px}.latest-grid h3{font:25px/1.2 Georgia,serif;margin:10px 0}.latest-grid h3 a,.latest-link{text-decoration:none}.latest-grid p{color:#d6dcdf}.latest-link{color:var(--gold);font-weight:700}.latest-all{text-align:center;margin:32px 0 0}@media(max-width:760px){.latest-section{padding:52px 6%}.latest-section>h2{font-size:34px}.latest-grid{grid-template-columns:1fr}.header nav>a[href="blog/"]{display:block;font-size:12px}}
