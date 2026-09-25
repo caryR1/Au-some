@@ -35,18 +35,20 @@
 .availability span{background:transparent;border:0;color:#e6d0a1;padding:0;font-weight:600}
 .availability span+span{border-left:1px solid #b9944e66;padding-left:18px}
 
-/* Desktop hero: brand far left, portrait centre, flags + services right. Mobile rules above are untouched. */
+/* Desktop hero (per approved mockup): brand far left, portrait centre, flags + seal + services right. Mobile rules above are untouched. */
 @media(min-width:761px){
   .heritage-flags{width:max-content;margin:0 auto 18px}
 }
 @media(min-width:1101px){
-  .hero-inner{grid-template-columns:minmax(0,1fr) minmax(0,.9fr) minmax(0,1.45fr);grid-template-rows:auto auto auto 1fr;gap:0 28px;align-items:start}
-  .hero-content{display:contents}
-  .brand-row{grid-column:1;grid-row:1/3;flex-direction:column;gap:22px;align-self:center}
-  .tagline{grid-column:1;grid-row:3;margin:22px 0 0}
+  .hero-inner{grid-template-columns:minmax(0,1fr) minmax(0,.95fr) minmax(0,1fr) auto;grid-template-rows:auto auto auto 1fr;gap:0 24px;align-items:start}
+  .hero-content,.brand-row{display:contents}
+  .wordmark{grid-column:1;grid-row:1/3;align-self:end;z-index:2}
+  .tagline{grid-column:1;grid-row:3;margin:18px 0 0}
   .hero-action{grid-column:1;grid-row:4;flex-direction:column;gap:10px;align-self:start}
-  .portrait{grid-column:2;grid-row:1/-1;align-self:end;margin:0 -40px -36px}
-  .portrait img{width:100%;max-height:680px}
-  .heritage-flags{grid-column:3;grid-row:1}
-  #services{grid-column:3;grid-row:2/-1}
+  .portrait{grid-column:2;grid-row:1/-1;align-self:end;margin:0 -70px -36px -30px}
+  .portrait img{width:100%;max-height:760px}
+  .heritage-flags{grid-column:3;grid-row:1;align-self:center;justify-self:end;margin:0 14px 0 0}
+  .seal{grid-column:4;grid-row:1;align-self:center;margin:8px}
+  #services{grid-column:3/5;grid-row:2/-1;margin-top:18px}
+  .script{font-size:clamp(68px,6vw,86px)}h1{font-size:clamp(38px,3.4vw,49px)}h1 span{font-size:clamp(21px,1.95vw,28px)}
 }
