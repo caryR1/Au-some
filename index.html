@@ -22,7 +22,7 @@
         <div class="service-list">
           <button class="service" data-contact data-service="Florida Notary Services"><span class="service-number" aria-hidden="true">✒</span><span class="service-label"><strong>Florida<br>Notary Services</strong></span><img class="service-art" src="assets/notary.png" alt="" width="160" height="160"></button>
           <button class="service" data-contact data-service="Jamaican Passport Renewals"><span class="service-number green" aria-hidden="true">🇯🇲</span><span class="service-label"><strong>Jamaican<br>Passport Renewals</strong></span><img class="service-art" src="assets/passport.png" alt="" width="160" height="160"></button>
-          <button class="service" data-contact data-service="Jamaican Driver’s License Renewals"><span class="service-number" aria-hidden="true">▤</span><span class="service-label"><strong>Jamaican Driver’s<br>License Renewals</strong></span><img class="service-art" src="assets/license.png" alt="" width="160" height="160"></button>
+          <button class="service" data-contact data-service="Jamaican Driver’s Licence Renewals"><span class="service-number" aria-hidden="true">▤</span><span class="service-label"><strong>Jamaican Driver’s<br>Licence Renewals</strong></span><img class="service-art" src="assets/license.png" alt="" width="160" height="160"></button>
         </div>
       </section>
       <div class="hero-action"><button class="button" data-contact>Contact Melicia <span aria-hidden="true">↗</span></button><span>By appointment</span></div>
@@ -30,6 +30,15 @@
   </div>
 </section>
 <div class="coastal-panorama" aria-hidden="true"></div>
+<section class="details" aria-labelledby="details-title">
+  <p class="eyebrow">HOW WE CAN HELP</p><h2 id="details-title">Personal service for important documents</h2><p class="details-intro">Clear, appointment-based assistance for Florida notary needs and select Jamaican document renewals in Bay County and surrounding areas.</p>
+  <div class="detail-grid">
+    <article><h3>Florida Notary Services</h3><p>Professional notarization support for eligible documents. Contact Melicia with the type of document you need notarized so she can help you prepare for your appointment.</p></article>
+    <article><h3>Jamaican Passport Renewals</h3><p>Assistance with the Jamaican passport renewal process, including helping you understand what to bring and what information is needed for your appointment.</p></article>
+    <article><h3>Jamaican Driver’s Licence Renewals</h3><p>Appointment-based assistance for Jamaican driver’s licence renewal needs, with personal guidance through the information and documentation required.</p></article>
+  </div>
+  <div class="appointment-note"><strong>Serving Bay County &amp; surrounding areas</strong><span>Services are available by appointment.</span><button class="button" data-contact>Contact Melicia <span aria-hidden="true">↗</span></button></div>
+</section>
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <h2 id="contact-title">Trusted Support Starts Here</h2>
   <div class="contact-links"><a href="tel:+14452459160"><span class="contact-symbol" aria-hidden="true">☎</span><span><small>CALL MELICIA</small>445-245-9160</span></a><a href="mailto:ausomenotarific@gmail.com"><span class="contact-symbol" aria-hidden="true">✉</span><span><small>EMAIL MELICIA</small>ausomenotarific@gmail.com</span></a></div>
@@ -45,10 +54,10 @@
 <label>Email <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" required maxlength="254"></label>
 <label>Preferred contact method <span aria-hidden="true">*</span><select name="contactMethod" required><option value="">Please select</option><option>Phone</option><option>Email</option></select></label>
 <label>Best contact time <span aria-hidden="true">*</span><input name="contactTime" placeholder="e.g. Weekdays after 3 pm, Central" required maxlength="160"></label>
-<label>Service needed <span aria-hidden="true">*</span><select name="service" required><option value="">Please select</option><option>Florida Notary Services</option><option>Jamaican Passport Renewals</option><option>Jamaican Driver’s License Renewals</option></select></label>
+<label>Service needed <span aria-hidden="true">*</span><select name="service" required><option value="">Please select</option><option>Florida Notary Services</option><option>Jamaican Passport Renewals</option><option>Jamaican Driver’s Licence Renewals</option></select></label>
 <label class="wide">Preferred appointment / availability window <span aria-hidden="true">*</span><input name="availability" placeholder="e.g. Tuesday or Thursday afternoon" required maxlength="240"></label>
 <label class="wide">Notes <small>(optional)</small><textarea name="notes" rows="4" maxlength="2000" placeholder="How can Melicia help? Please do not include document numbers or sensitive personal information."></textarea></label>
-</div><p class="privacy">Your information is used only to respond to your request. This form opens a prepared message in your email app. You’ll review and send it there.</p><button class="button form-submit" type="submit">Prepare email <span aria-hidden="true">↗</span></button><p id="form-status" role="status"></p><div id="email-fallback" hidden><p>If your email app didn’t open, copy your message and email it to <a href="mailto:ausomenotarific@gmail.com">ausomenotarific@gmail.com</a>.</p><textarea id="prepared-message" aria-label="Prepared email message" readonly rows="7"></textarea><button class="button secondary" type="button" id="copy-message">Copy message</button></div></form>
+<label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label></div><p class="privacy">Your information is used only to respond to your request. Please do not include document numbers or sensitive personal information.</p><button class="button form-submit" type="submit">Submit Request <span aria-hidden="true">↗</span></button><p id="form-status" role="status" aria-live="polite"></p></form>
 </dialog>
 <noscript><div class="noscript">To request an appointment, call <a href="tel:+14452459160">445-245-9160</a> or email <a href="mailto:ausomenotarific@gmail.com">ausomenotarific@gmail.com</a>.</div></noscript>
 </body></html>

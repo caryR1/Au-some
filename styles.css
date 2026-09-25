@@ -16,3 +16,18 @@
 
 @media(max-width:760px){.availability span+span{padding:10px 16px}.service strong{font-size:19px}}
 @media(max-width:380px){.service strong{font-size:17px}}
+
+/* Version 2: approved interaction refinements */
+.button{border-radius:999px}
+.availability{display:flex;justify-content:center;align-items:center;gap:28px;margin-top:28px;padding:18px 24px;border-top:1px solid #d3ad5e40;border-bottom:1px solid #d3ad5e40;color:#e6d0a1}
+.availability span{background:none;border:0;border-radius:0;color:inherit;padding:0;font-weight:700;letter-spacing:.2px}
+.availability span+span{border-left:1px solid #b9944e66;padding-left:28px}
+@media(max-width:760px){.availability{flex-direction:column;gap:7px;padding:16px}.availability span+span{border:0;padding:0}}
+
+/* Version 2: full website content */
+.details{max-width:1250px;margin:auto;padding:64px 5%;text-align:center;background:linear-gradient(180deg,#061d2e,#08243a)}
+.details h2{font:44px/1.15 Georgia,serif;margin:0 0 14px;color:#fbf6e9}.details-intro{max-width:760px;margin:0 auto 34px;color:var(--muted)}
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left}.detail-grid article{border:1px solid #c49b4455;border-radius:20px;padding:27px;background:linear-gradient(145deg,#0a2a42,#061823);box-shadow:0 12px 30px #0002}.detail-grid h3{font:25px/1.2 Georgia,serif;color:var(--gold);margin:0 0 12px}.detail-grid p{margin:0;color:#d9dfe1;font-size:15px}.appointment-note{margin:34px auto 0;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;padding:22px;border-top:1px solid #d3ad5e40}.appointment-note strong{color:var(--gold);font:20px Georgia,serif}.appointment-note span{color:#dce2e4}
+@media(max-width:760px){.details{padding:46px 6%}.details h2{font-size:34px}.detail-grid{grid-template-columns:1fr}.detail-grid article{padding:22px}.appointment-note{flex-direction:column;gap:12px}}
+
+.honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}.form-submit:disabled{opacity:.65;cursor:wait}
