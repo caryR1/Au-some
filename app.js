@@ -6,5 +6,5 @@ dialog.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.
 dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');opener?.focus();});
 const params=new URLSearchParams(location.search);
 const status=document.querySelector('#form-status');
-if(params.get('sent')==='1'&&status){status.textContent='Thank you. Your request has been submitted to Melicia.';}
+if(params.get('sent')==='1'&&status){status.textContent='Thank you. Your request has been submitted to Melicia.';dialog.showModal();document.body.classList.add('modal-open');status.scrollIntoView({block:'center'});}
 if(params.get('error')==='1'&&status){status.textContent='We’re sorry—there was an error submitting your request through the website. Please contact Melicia directly at 445-245-9160 or au-somenotarific@gmail.com.';dialog.showModal();document.body.classList.add('modal-open');}
