@@ -40,3 +40,12 @@ if(params.has('sent')||params.has('error')){
   if(params.get('sent')==='1'){forget();showResult(true);}
   else{restore();dialog.showModal();document.body.classList.add('modal-open');showResult(false);}
 }
+
+
+// Mobile navigation
+const menuToggle=document.querySelector('.menu-toggle');
+const mainNav=document.querySelector('#main-nav');
+if(menuToggle&&mainNav){
+ menuToggle.addEventListener('click',()=>{const open=mainNav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Close menu':'Open menu')});
+ mainNav.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{mainNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Open menu')}));
+}
