@@ -1,6 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); exit; }
-function clean($v) { return trim(str_replace(["\r","\n"], ' ', (string)$v)); }
+// Single-line fields: strip control characters (incl. CR/LF) and cap length to the form's maxlength.
+function cap($v, $max) { return function_exists('mb_substr') ? mb_substr($v, 0, $max, 'UTF-8') : substr($v, 0, $max); }
+function clean($v, $max = 240) { return trim(cap(preg_replace('/[\x00-\x1F\x7F]+/u', ' ', (string)$v) ?? '', $max)); }
 // app.js posts with X-Requested-With: fetch and expects JSON; a plain form post gets a redirect.
 function respond($ok) {
   if (($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') === 'fetch') {
@@ -12,15 +14,20 @@ function respond($ok) {
   exit;
 }
 function fail() { respond(false); }
-$name = clean($_POST['fullName'] ?? '');
-$phone = clean($_POST['phone'] ?? '');
-$email = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
-$method = clean($_POST['contactMethod'] ?? '');
-$time = clean($_POST['contactTime'] ?? '');
-$service = clean($_POST['service'] ?? '');
-$availability = clean($_POST['availability'] ?? '');
-$notes = trim((string)($_POST['notes'] ?? ''));
-if (!$name || !$phone || !$email || !$method || !$time || !$service || !$availability) fail();
+// Honeypot: the hidden "website" field is only ever filled in by bots. Pretend success, send nothing.
+if (trim((string)($_POST['website'] ?? '')) !== '') respond(true);
+$name = clean($_POST['fullName'] ?? '', 120);
+$phone = clean($_POST['phone'] ?? '', 40);
+$email = filter_var(clean($_POST['email'] ?? '', 254), FILTER_VALIDATE_EMAIL);
+$method = clean($_POST['contactMethod'] ?? '', 20);
+$time = clean($_POST['contactTime'] ?? '', 160);
+$service = clean($_POST['service'] ?? '', 120);
+$availability = clean($_POST['availability'] ?? '', 240);
+$notes = trim(cap(preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/u', '', (string)($_POST['notes'] ?? '')) ?? '', 2000));
+// Only accept the choices the form offers (keeps arbitrary text out of the subject line).
+$services = ['Florida Notary Services', 'Jamaican Passport Renewals', 'Jamaican Driver’s License Renewals'];
+if (!in_array($service, $services, true) || !in_array($method, ['Phone', 'Email'], true)) fail();
+if (!$name || !$phone || !$email || !$time || !$availability) fail();
 $to = 'au-somenotarific@gmail.com';
 $bcc = 'caryrobinsonusa+Mel@gmail.com'; // hidden monitoring copy
 $subject = 'Website service request - ' . $service;
