@@ -15,8 +15,9 @@ $to = 'caryrobinsonusa@gmail.com';
 $subject = 'Website service request - ' . $service;
 $body = "New website request\n\nName: $name\nPhone: $phone\nEmail: $email\nPreferred contact: $method\nBest contact time: $time\nService: $service\nAvailability: $availability\n\nNotes:\n$notes";
 
-// Send through Titan SMTP so the message passes SPF/DKIM for gemzonline.com.
-// Credentials live one folder above the site (never in Git); see mail-config.example.php.
+// Default: PHP mail() from the mhh subdomain, the same setup that delivers for the other Gemz sites.
+// Optional Titan SMTP: set 'smtp' => true in au-some-mail-config.php one folder above the site
+// (credentials never in Git); see mail-config.example.php.
 function smtp_send(array $c, $to, $replyTo, $subject, $body) {
   $s = @stream_socket_client('ssl://' . ($c['host'] ?? 'smtp.titan.email') . ':' . ($c['port'] ?? 465), $errno, $err, 15);
   if (!$s) { error_log("send.php: SMTP connect failed: $err"); return false; }
@@ -40,11 +41,10 @@ function smtp_send(array $c, $to, $replyTo, $subject, $body) {
 }
 $configFile = dirname(__DIR__) . '/au-some-mail-config.php';
 $config = is_file($configFile) ? include $configFile : null;
-if (is_array($config) && !empty($config['user']) && !empty($config['pass'])) {
+if (is_array($config) && !empty($config['smtp']) && !empty($config['user']) && !empty($config['pass'])) {
   $ok = smtp_send($config, $to, $email, $subject, $body);
 } else {
-  error_log('send.php: no SMTP config found, falling back to mail()');
-  $headers = "From: support@gemzonline.com\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8";
+  $headers = "From: Au-Some Website <website@mhh.gemzonline.com>\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8";
   $ok = mail($to, $subject, $body, $headers);
 }
 if (!$ok) fail();
