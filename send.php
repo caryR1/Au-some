@@ -1,7 +1,17 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); exit; }
 function clean($v) { return trim(str_replace(["\r","\n"], ' ', (string)$v)); }
-function fail() { header('Location: index.html?error=1#contact'); exit; }
+// app.js posts with X-Requested-With: fetch and expects JSON; a plain form post gets a redirect.
+function respond($ok) {
+  if (($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') === 'fetch') {
+    header('Content-Type: application/json');
+    echo json_encode(['ok' => $ok]);
+  } else {
+    header('Location: index.html?' . ($ok ? 'sent' : 'error') . '=1#contact');
+  }
+  exit;
+}
+function fail() { respond(false); }
 $name = clean($_POST['fullName'] ?? '');
 $phone = clean($_POST['phone'] ?? '');
 $email = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
@@ -11,7 +21,7 @@ $service = clean($_POST['service'] ?? '');
 $availability = clean($_POST['availability'] ?? '');
 $notes = trim((string)($_POST['notes'] ?? ''));
 if (!$name || !$phone || !$email || !$method || !$time || !$service || !$availability) fail();
-$to = 'caryrobinsonusa@gmail.com';
+$to = 'au-somenotarific@gmail.com';
 $subject = 'Website service request - ' . $service;
 $body = "New website request\n\nName: $name\nPhone: $phone\nEmail: $email\nPreferred contact: $method\nBest contact time: $time\nService: $service\nAvailability: $availability\n\nNotes:\n$notes";
 
@@ -47,5 +57,4 @@ if (is_array($config) && !empty($config['smtp']) && !empty($config['user']) && !
   $headers = "From: Au-Some Website <website@mhh.gemzonline.com>\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8";
   $ok = mail($to, $subject, $body, $headers);
 }
-if (!$ok) fail();
-header('Location: index.html?sent=1#contact');
+respond($ok);
