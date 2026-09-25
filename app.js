@@ -1,4 +1,23 @@
-const dialog=document.querySelector('#contact-dialog'),form=document.querySelector('#contact-form');let opener;
+// Mobile navigation — independent of page-specific features
+const menuToggle=document.querySelector('.menu-toggle');
+const mainNav=document.querySelector('#main-nav');
+if(menuToggle&&mainNav){
+  menuToggle.addEventListener('click',()=>{
+    const open=mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded',String(open));
+    menuToggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  mainNav.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute('aria-label','Open menu');
+  }));
+}
+
+// Homepage contact/form features only run when their elements exist.
+const dialog=document.querySelector('#contact-dialog'),form=document.querySelector('#contact-form');
+if(dialog&&form){
+let opener;
 document.querySelector('#year').textContent=new Date().getFullYear();
 document.querySelectorAll('[data-contact]').forEach(button=>button.addEventListener('click',()=>{opener=button;if(button.dataset.service)form.elements.service.value=button.dataset.service;dialog.showModal();document.body.classList.add('modal-open');form.elements.fullName.focus();}));
 document.querySelector('.close').addEventListener('click',()=>dialog.close());
@@ -42,10 +61,5 @@ if(params.has('sent')||params.has('error')){
 }
 
 
-// Mobile navigation
-const menuToggle=document.querySelector('.menu-toggle');
-const mainNav=document.querySelector('#main-nav');
-if(menuToggle&&mainNav){
- menuToggle.addEventListener('click',()=>{const open=mainNav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Close menu':'Open menu')});
- mainNav.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{mainNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Open menu')}));
+
 }
