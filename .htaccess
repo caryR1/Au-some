@@ -1,5 +1,8 @@
 # Au-Some Notarific: server rules (Hostinger / Apache-compatible)
 
+# Old blog URL (Licence spelling) -> new URL.
+Redirect 301 /blog/keep-jamaican-drivers-licence-current.html /blog/keep-jamaican-drivers-license-current.html
+
 # No directory listings.
 Options -Indexes
 
