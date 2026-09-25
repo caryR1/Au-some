@@ -7,4 +7,4 @@
 @media(max-width:380px){.mini-brand{gap:7px}.header{padding-left:12px;padding-right:12px}.service strong{font-size:20px}.service{padding:13px 10px;gap:9px}.service-art{width:50px;height:50px}.contact-links>a{font-size:18px}.hero-action{gap:12px}.hero-action .button{font-size:14px}.portrait{height:380px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 /* Final alignment refinements */
-@media(min-width:1101px){.portrait img{transform:translateX(-12px)}}
+@media(min-width:1101px){.portrait img{transform:translateX(-72px)}}
