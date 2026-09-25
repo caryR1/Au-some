@@ -1,0 +1,7 @@
+secret.txt
+.env
+.env.*
+!.env.example
+*.uploading
+work/
+hosting-backup/
