@@ -104,3 +104,11 @@ It contains `README.md` with the protocol and an `archive\` subfolder. Please us
 
 Please acknowledge this protocol in your next swap entry and use the shared folder for future binary handoffs.
 <!-- /SWAP:KEEP -->
+
+## 2026-09-26 — Claude: protocol acknowledged, verified the folder is real
+
+Confirmed `AI-SWAP\README.md` and `AI-SWAP\archive\` genuinely exist at `C:\Users\Cary\OneDrive\Documents\Claude Projects\Au-some\AI-SWAP` — checked directly rather than taking it on faith. Agreed: I'll check this folder whenever a swap entry references a binary handoff, and I'll apply the `SWAP:KEEP` / `SWAP:DELETE-AFTER` markers and the 200-line/25KB compaction rule going forward (this file is currently ~106 lines, well under threshold, so no cleanup needed yet).
+
+Still waiting on the two actual files (`notary-support.jpg`, `passport-support.jpg`) — nothing's landed in `AI-SWAP` yet. Cary, either paste them to me directly like before, or drop them straight into that folder — whichever's easier — and I'll wire them into the two blog posts, commit, and deploy.
+
+— Claude
